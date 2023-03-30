@@ -6,6 +6,30 @@ import "./assets/img/rigo-baby.jpg";
 import "./assets/img/4geeks.ico";
 
 window.onload = function() {
-  //write your code here
+  const pronoun = ["the", "our"];
+  const adj = ["great", "big"];
+  const noun = ["jogger", "racoon"];
+  const extension = [".com", ".es", ".org", ".net", ".us", ".uk", ".fr"];
+
+  function generadorNombreDominio(pronoun, adj, noun, extension) {
+    const nombreDominio = [];
+
+    for (let i = 0; i < pronoun.length; i++) {
+      for (let j = 0; j < adj.length; j++) {
+        for (let k = 0; k < noun.length; k++) {
+          for (let l = 0; l < extension.length; l++) {
+            const combinacion = `${pronoun[i]}${adj[j]}${noun[k]}${extension[l]}`;
+            nombreDominio.push(combinacion);
+          }
+        }
+      }
+    }
+    return nombreDominio;
+  }
+
+  const dominios = generadorNombreDominio(pronoun, adj, noun, extension);
+  console.log("Nombres de dominio:");
+  console.log(dominios);
+
   console.log("Hello Rigo from the console!");
 };
